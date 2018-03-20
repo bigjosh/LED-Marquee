@@ -1,5 +1,4 @@
 # LED-Marquee
-Files for my 12ft LED marquee sign
 
 
 This project uses 2 Arduino boards to retrieve a custom message that is saved on my personal website server and display it on the LED marquee sign. Here's the steps that are taken to achieve that:
