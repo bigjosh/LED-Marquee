@@ -86,5 +86,7 @@ void loop() {
   
   Serial.println();
   Serial.println("closing connection");
-}
 
+
+  // how to listen for the ? coming from UNO and send the message back....?
+}
