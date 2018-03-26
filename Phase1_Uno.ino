@@ -2,7 +2,10 @@
 #include <SoftwareSerial.h>
 SoftwareSerial virtualSerial(10, 11); // RX, TX
 
-String str = "DEFAULT TEXT";
+
+#define STRINGBUFFER_LEN 200      // The length of the buffer used to read a new string from the serial port
+
+char str[STRINGBUFFER_LEN+1];     // Leave room for a safety null terminator at the end.
 
 // Change this to be at least as long as your pixel string (too long will work fine, just be a little slower)
 #define PIXELS 60*4  // Number of pixels in the string. I am using 4 meters of 96LED/M
@@ -899,12 +902,11 @@ void getCustomData() {
   virtualSerial.write("~");
 
   // loop until its available
-  while(!virtualSerial.available()) {
-    delay(1000);
-  }
-
-  // store it for later
-  str = virtualSerial.readString();
+  
+  
+  intlen  = virtualSerial.readBytesUntil( '\r' , str , STRINGBUFFER_LEN );
+  
+  str[len] = 0x00;        // Null terminate
 }
 
 
