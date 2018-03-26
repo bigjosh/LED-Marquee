@@ -1,9 +1,3 @@
-Z
-In addition to the well-known paragraph-length placeholder texts Lorem Ipsum, and Li Europan Lingues, there are several other filler texts.
-Z
-The first four letters of the QWERTY keyboard are often used as filler text when a full block of text is not needed.
-Z
-The twelve most common letters in the English language are another popular choice when a designer just needs a meaningless phrase to test our typography and layout.
-Z
-This phrase originally appeared as a typing drill, and dates all the way back to 1889. If you’re looking for a short phrase to use as you work on typography and layout, this one has vintage appeal.
-Z
+This is the first line of text.
+This is the second line of text.
+This is the third line of text.
