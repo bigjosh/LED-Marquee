@@ -2,7 +2,7 @@
 #include <SoftwareSerial.h>
 SoftwareSerial virtualSerial(10, 11); // RX, TX
 
-char str[] = "DEFAULT";
+String str = "DEFAULT TEXT";
 
 // Change this to be at least as long as your pixel string (too long will work fine, just be a little slower)
 #define PIXELS 60*4  // Number of pixels in the string. I am using 4 meters of 96LED/M
@@ -893,12 +893,18 @@ void scroll() {
 }
 
 
+// Notifies the ESP Wifi module that we're ready to retrieve custom message data
 void getCustomData() {
-  virtualSerial.write("?");
+  // send special symbol so ESP knows to respond with custom message data
+  virtualSerial.write("~");
+
+  // loop until its available
   while(!virtualSerial.available()) {
     delay(1000);
   }
-  str = virtualSerial.read();
+
+  // store it for later
+  str = virtualSerial.readString();
 }
 
 
@@ -924,6 +930,5 @@ void loop() {
   
   return;  
 }
-
 
 
